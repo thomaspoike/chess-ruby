@@ -51,7 +51,7 @@ class Chessboard
     (0..7).each do |i|
       print "#{8 - i}  "
       (0..7).each do |j|
-        print @board[i][j].nil? ? 'X ' : @board[i][j].class.name[0..1]+@board[i][j].color[0]
+        print @board[i][j].nil? ? 'X ' : @board[i][j].class.name[0..1]+@board[i][j].color[0].upcase + ' '
       end
       print "  #{8 - i} "
 
