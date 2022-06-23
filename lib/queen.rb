@@ -1,11 +1,12 @@
 # Queen class
 
 class Queen
-  attr_reader :color, :position
+  attr_accessor :color, :position, :piece
 
   def initialize(position, color)
     @position = position
     @color = color
+    @color == 'white' ? @piece = '♕' : @piece = '♛'
   end
 
   def legal_move?(new_position)

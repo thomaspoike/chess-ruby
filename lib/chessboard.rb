@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# ♔ ♚	♕ ♛	♖ ♜	♗ ♝	♘ ♞	♙ ♟
+
 require_relative 'knight'
 require_relative 'bishop'
 require_relative 'rook'
@@ -48,17 +50,18 @@ class Chessboard
 
   # Print the board
   def print_board
-    puts '   A   B   C   D   E   F   G   H'
+    puts '   A  B  C  D  E  F  G  H'
     (0..7).reverse_each do |i|
-      print "#{i}  "
+      print "#{i} "
       (0..7).each do |j|
-        print @board[i][j].nil? ? ' X  ' : @board[i][j].class.name[0..1] + @board[i][j].color[0].upcase + ' '
+        print @board[i][j].nil? ? ' _ ' : " #{@board[i][j].piece} "
+        # .class.name[0..1] + @board[i][j].color[0].upcase + ' '
       end
       print "  #{i} "
       puts
     end
-    puts '   A   B   C   D   E   F   G   H'
-  end
+    puts '   A  B  C  D  E  F  G  H'
+    end
 
   def checkmate?(_color)
     # # Check if the king is in checkmate

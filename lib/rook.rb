@@ -1,10 +1,11 @@
 # Rook class
 class Rook
-  attr_accessor :color, :position
+  attr_accessor :color, :position, :piece
 
   def initialize(position, color)
     @position = position
     @color = color
+    @color == 'white' ? @piece = '♖' : @piece = '♜'
   end
 
   def legal_move?(new_position)

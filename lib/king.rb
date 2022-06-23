@@ -2,11 +2,12 @@
 
 # King class
 class King
-  attr_accessor :position, :color
+  attr_accessor :position, :color, :piece
 
   def initialize(position, color)
     @position = position
     @color = color
+    @color == 'white' ? @piece = '♔' : @piece = '♚'
   end
 
   def legal_move?(new_position)
