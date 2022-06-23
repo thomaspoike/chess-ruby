@@ -14,6 +14,7 @@ class Chessboard
 
   def initialize
     @board = Array.new(8) { Array.new(8) }
+    populate_board
   end
 
   def populate_board
@@ -47,18 +48,38 @@ class Chessboard
 
   # Print the board
   def print_board
-    puts '   A   B   C   D   E   F   G   H'    
-    (0..7).each do |i|
-      print "#{8 - i}  "
+    puts '   A   B   C   D   E   F   G   H'
+    (0..7).reverse_each do |i|
+      print "#{i}  "
       (0..7).each do |j|
-        print @board[i][j].nil? ? ' X  ' : @board[i][j].class.name[0..1]+@board[i][j].color[0].upcase + ' '
+        print @board[i][j].nil? ? ' X  ' : @board[i][j].class.name[0..1] + @board[i][j].color[0].upcase + ' '
       end
-      print "  #{8 - i} "
+      print "  #{i} "
       puts
     end
     puts '   A   B   C   D   E   F   G   H'
   end
+
+  def checkmate?(_color)
+    # # Check if the king is in checkmate
+    # king_position = nil
+    # (0..7).each do |i|
+    #   (0..7).each do |j|
+    #     if @board[i][j].class.name == 'King' && @board[i][j].color == color
+    #       king_position = [i, j]
+    #     end
+    #   end
+    # end
+    # # Check if the king is in check
+    # (0..7).each do |i|
+    #   (0..7).each do |j|
+    #     if @board[i][j].class.name == 'Pawn' && @board[i][j].color == color
+    #       if @board[i][j].legal_move?(king_position)
+    #         return false
+    #       end
+    #     end
+    #   end
+    # end
+    false
+  end
 end
-board = Chessboard.new
-board.populate_board
-board.print_board

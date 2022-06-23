@@ -12,11 +12,12 @@ class Bishop
 
   def legal_move?(new_position)
     return false if new_position.nil?
+
     (0..7).each do |i|
-      return true if [@position[0]+i, @position[1]+i] == new_position
-      return true if [@position[0]-i, @position[1]+i] == new_position
-      return true if [@position[0]+i, @position[1]-i] == new_position
-      return true if [@position[0]-i, @position[1]-i] == new_position
+      return true if [@position[0] + i, @position[1] + i] == new_position
+      return true if [@position[0] - i, @position[1] + i] == new_position
+      return true if [@position[0] + i, @position[1] - i] == new_position
+      return true if [@position[0] - i, @position[1] - i] == new_position
     end
     false
   end
@@ -24,5 +25,4 @@ class Bishop
   def move(new_position)
     @position = new_position if legal_move?(new_position)
   end
-
 end

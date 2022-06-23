@@ -13,10 +13,10 @@ class Pawn
     return false if new_position.nil?
 
     color = @color
-    if color =='white'
-      return true if new_position == [@position[0] + 1, @position[1] + 1]
-    else
-      return true if new_position == [@position[0] - 1, @position[1] - 1]
+    if color == 'white'
+      return true if new_position == [@position[0] + 1, @position[1]]
+    elsif new_position == [@position[0] - 1, @position[1]]
+      return true
     end
     false
   end
