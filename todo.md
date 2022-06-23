@@ -1,0 +1,1 @@
+Make it so you can't move to position if it's occupied by a piece with the same color moving
