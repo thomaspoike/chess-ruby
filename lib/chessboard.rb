@@ -61,7 +61,7 @@ class Chessboard
       puts
     end
     puts '   A  B  C  D  E  F  G  H'
-    end
+  end
 
   def checkmate?(_color)
     # # Check if the king is in checkmate
