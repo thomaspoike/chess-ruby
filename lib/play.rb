@@ -77,4 +77,13 @@ class Play
 
     @board.board[position[0]][position[1]].color == @current_player.color
   end
+
+  # Check if the path from the from position to the to position is clear is blocked by a piece
+  def blocked?(from_position, to_position)
+    
+  end
+
+  def piece_at_position?(position)
+    !@board.board[position[0]][position[1]].nil?
+  end
 end
