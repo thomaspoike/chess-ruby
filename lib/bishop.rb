@@ -42,6 +42,3 @@ class Bishop
     moves
   end
 end
-
-bishop = Bishop.new([0, 0], 'white')
-p (bishop.generated_moves)

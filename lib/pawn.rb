@@ -28,5 +28,6 @@ class Pawn
 
   def generated_moves
     color == 'white' ? moves = [[[1, 0]]] : moves = [[[-1, 0]]]
+    moves
   end
 end

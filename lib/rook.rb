@@ -42,5 +42,3 @@ class Rook
     moves
   end
 end
-
-p (Rook.new([0, 0], 'white').generated_moves)
