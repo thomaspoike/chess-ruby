@@ -41,12 +41,6 @@ class Bishop
     end
     moves
   end
-
-  def clean_moves(moves)
-    # remove empty
-    moves.delete_if { |move| move.nil? }
-  end
-
 end
 
 bishop = Bishop.new([0, 0], 'white')

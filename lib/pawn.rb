@@ -25,4 +25,8 @@ class Pawn
   def move(new_position)
     @position = new_position if legal_move?(new_position)
   end
+
+  def generated_moves
+    color == 'white' ? moves = [[[1, 0]]] : moves = [[[-1, 0]]]
+  end
 end

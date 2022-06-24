@@ -28,4 +28,44 @@ class Queen
   def move(new_position)
     @position = new_position if legal_move?(new_position)
   end
+
+  def generated_moves_horizontal_vertical
+    moves_one, moves_two, moves_three, moves_four = [], [], [], []
+    (1..7).each do |i|
+      moves_one << [@position[0], @position[1] + i] if (@position[0]).between?(0, 7) && (@position[1] + i).between?(0, 7)
+
+      moves_three << [@position[0], @position[1] - i] if (@position[0]).between?(0, 7) && (@position[1] - i).between?(0, 7)
+
+      moves_two << [@position[0] + i, @position[1]] if (@position[0] + i).between?(0, 7) && (@position[1]).between?(0, 7)
+
+      moves_four << [@position[0] - i, @position[1]] if (@position[0] - i).between?(0, 7) && (@position[1]).between?(0, 7)
+    end
+    moves = [moves_one] + [moves_two] + [moves_three] + [moves_four]
+    moves.each do |move|
+      move.empty? ? moves.delete(move) : nil
+    end
+    moves
+  end
+
+  def generated_moves_diagonal
+    moves_one, moves_two, moves_three, moves_four = [], [], [], []
+    (1..7).each do |i|
+      moves_one << [@position[0] + i, @position[1] + i] if (@position[0] + i).between?(0, 7) && (@position[1] + i).between?(0, 7)
+      moves_two << [@position[0] - i, @position[1] + i] if (@position[0] - i).between?(0, 7) && (@position[1] + i).between?(0, 7)
+      moves_three << [@position[0] + i, @position[1] - i] if (@position[0] + i).between?(0, 7) && (@position[1] - i).between?(0, 7)
+      moves_four << [@position[0] - i, @position[1] - i] if (@position[0] - i).between?(0, 7) && (@position[1] - i).between?(0, 7)
+    end
+    moves = [moves_one] + [moves_two] + [moves_three] + [moves_four]
+    moves.each do |move|
+      move.empty? ? moves.delete(move) : nil
+    end
+    moves
+  end
+
+  def generated_moves
+    generated_moves_horizontal_vertical + generated_moves_diagonal
+  end
 end
+
+queen = Queen.new([0, 0], 'white')
+p queen.generated_moves

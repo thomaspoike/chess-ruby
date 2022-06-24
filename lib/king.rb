@@ -22,6 +22,11 @@ class King
     false
   end
 
+  def generated_moves
+    moves = [[[1, 1], [1, 0], [1, -1], [0, 1], [0, -1], [-1, 1], [-1, 0], [-1, -1]]]
+    moves
+  end
+
   def move(new_position)
     @position = new_position if legal_move?(new_position)
   end

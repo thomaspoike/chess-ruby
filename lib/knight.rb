@@ -25,4 +25,9 @@ class Knight
   def move(new_position)
     @position = new_position if legal_move?(new_position)
   end
+
+  def generated_moves
+    moves = [[[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, 1], [-2, -1]]]
+    moves
+  end
 end
