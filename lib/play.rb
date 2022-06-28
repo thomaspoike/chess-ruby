@@ -20,7 +20,7 @@ class Play
   end
 
   def play
-    welcome
+    welcome_message
     until @board.checkmate?(@current_player.color) || @board.checkmate?(@other_player.color)
       @board.print_board
       from_position, to_position = get_positions

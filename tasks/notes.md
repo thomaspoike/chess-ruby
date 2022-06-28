@@ -1,0 +1,2 @@
+Some progress lost when I corrupted my computer, so lost approx 2 days of development maybe?
+Therefore I'm taking a break from this app, so I can continue at a later date. Might redo the whole program.
